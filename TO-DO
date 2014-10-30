@@ -1,0 +1,8 @@
+Pendientes:
+
+* Considerar a futuro incluir un portal de automonitoreo vía MRTG con
+  autenticación http (htpasswd).
+* Incluir la opción de colocar todos los servicios sobre SSL.
+* Limpiar un poco la lista de dependencias.
+* Activar los módulos de TROVE y SAHARA apenas estén disponiles en
+  los repos oficiales de Ubuntu.

@@ -1,0 +1,9 @@
+1.0.0.ub1404lts - 29-Octubre-2014
+
+- Cambios generales para adaptar el instalador original
+  para Icehouse en la nueva versión (Juno).
+- Se agrega lo necesario para soportar sahara toda vez que
+  cloud-archive de Ubuntu tenga listos los paquetes.
+- Todos los módulos probados y operativos a excepción de
+  sahara y trove que aun no están disponibles en el repo-
+  sitorio de Ubuntu para JUNO.
