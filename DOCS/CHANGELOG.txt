@@ -1,3 +1,12 @@
+1.0.1.ub1404lts - 26-Noviembre-2014
+- Se incluye la opción de seleccionar el tipo
+  de proveedor de token para Keystone (pki o
+  uuid).
+- Corrección menor en módulo de instalación de
+  keystone.
+- Se modifican la secuencia y notas correspondientes
+  para agregar el repositorio de JUNO en Ubuntu 14.04lts.
+
 1.0.0.ub1404lts - 29-Octubre-2014
 
 - Cambios generales para adaptar el instalador original

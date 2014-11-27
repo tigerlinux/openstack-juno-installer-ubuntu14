@@ -36,8 +36,9 @@ echo "Activando repositorios de JUNO para Ubuntu Server 14.04lts"
 echo ""
 
 apt-get -y install python-software-properties
-echo "deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/juno main" >  /etc/apt/sources.list.d/ubuntu-cloud-archive-juno-trusty.list
-apt-get -y install ubuntu-cloud-keyring
+# echo "deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/juno main" >  /etc/apt/sources.list.d/ubuntu-cloud-archive-juno-trusty.list
+# apt-get -y install ubuntu-cloud-keyring
+add-apt-repository -y cloud-archive:juno
 apt-get -y update && apt-get -y dist-upgrade
 
 osreposinstalled=`aptitude search python-openstackclient|grep python-openstackclient|head -n1|wc -l`

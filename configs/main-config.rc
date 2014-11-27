@@ -6,8 +6,8 @@
 # Octubre del 2014
 #
 # Archivo de configuracion principal
-# Para el instalador versión 1.0.0.ub1404lts "Shadow Cat"
-# Octubre 29, 2014
+# Para el instalador versión 1.0.1.ub1404lts "Shadow Cat"
+# Noviembre 26, 2014
 #
 
 #
@@ -139,6 +139,11 @@ keystoneservicestenant="services"
 keystonememberrole="Member"
 keystonereselleradminrole="ResellerAdmin"
 keystone_admin_rc_file="/root/keystonerc_admin"
+
+# Flavor para el tipo de proveedor de TOKEN para Keystone
+# Dos opciones: pki o uuid
+# Por defecto: uuid
+keystonetokenflavor="uuid"
 
 # Region para todos los endpoints
 # Ejemplo: MiSitioDeOpenStack

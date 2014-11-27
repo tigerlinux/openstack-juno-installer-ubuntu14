@@ -26,8 +26,7 @@ Los repositorios oficiales de Ubuntu 14.04 LTS vienen con los paquetes de ICEHOU
 
 
 apt-get -y install python-software-properties
-echo "deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/juno main" >  /etc/apt/sources.list.d/ubuntu-cloud-archive-juno-trusty.list
-apt-get -y install ubuntu-cloud-keyring
+add-apt-repository -y cloud-archive:juno
 apt-get -y update && apt-get -y dist-upgrade
 
 Luego reinicie el servidor en caso de tener un nuevo Kernel
