@@ -1,3 +1,7 @@
+1.0.2.ub1404lts - 09-Diciembre-2014
+- Se corrige un BUG en la configuración del parámetro
+  "cpu_mode" en el módulo de instalación de Nova.
+
 1.0.1.ub1404lts - 26-Noviembre-2014
 - Se incluye la opción de seleccionar el tipo
   de proveedor de token para Keystone (pki o

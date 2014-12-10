@@ -490,7 +490,7 @@ then
 	echo ""
 else
 	crudini --set /etc/nova/nova.conf libvirt virt_type kvm
-	crudini --set /etc/nova/nova.conf libvirt cpu_model $libvirt_cpu_mode
+	crudini --set /etc/nova/nova.conf libvirt cpu_mode $libvirt_cpu_mode
 fi
 
 sync
