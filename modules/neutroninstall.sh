@@ -477,6 +477,20 @@ case $dbflavor in
 	crudini --set /etc/neutron/plugins/ml2/ml2_conf.ini database connection postgresql://$neutrondbuser:$neutrondbpass@$dbbackendhost:$psqldbport/$neutrondbname
 	;;
 esac
+
+crudini --set /etc/neutron/neutron.conf database retry_interval 10
+crudini --set /etc/neutron/neutron.conf database idle_timeout 3600
+crudini --set /etc/neutron/neutron.conf database min_pool_size 1
+crudini --set /etc/neutron/neutron.conf database max_pool_size 10
+crudini --set /etc/neutron/neutron.conf database max_retries 100
+crudini --set /etc/neutron/neutron.conf database pool_timeout 10
+
+crudini --set /etc/neutron/plugins/ml2/ml2_conf.ini database retry_interval 10
+crudini --set /etc/neutron/plugins/ml2/ml2_conf.ini database idle_timeout 3600
+crudini --set /etc/neutron/plugins/ml2/ml2_conf.ini database min_pool_size 1
+crudini --set /etc/neutron/plugins/ml2/ml2_conf.ini database max_pool_size 10
+crudini --set /etc/neutron/plugins/ml2/ml2_conf.ini database max_retries 100
+crudini --set /etc/neutron/plugins/ml2/ml2_conf.ini database pool_timeout 10
  
 sync
 sleep 2

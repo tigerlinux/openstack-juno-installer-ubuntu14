@@ -141,7 +141,6 @@ esac
 glanceworkers=`grep processor.\*: /proc/cpuinfo |wc -l`
  
  
-crudini --set /etc/glance/glance-api.conf DEFAULT sql_idle_timeout 3600
 crudini --set /etc/glance/glance-api.conf DEFAULT workers $glanceworkers
 crudini --set /etc/glance/glance-api.conf DEFAULT registry_host 0.0.0.0
 crudini --set /etc/glance/glance-api.conf DEFAULT registry_port 9191
@@ -150,7 +149,19 @@ crudini --set /etc/glance/glance-api.conf DEFAULT filesystem_store_datadir /var/
 crudini --set /etc/glance/glance-api.conf DEFAULT delayed_delete False
 crudini --set /etc/glance/glance-api.conf DEFAULT scrub_time 43200
  
- 
+crudini --set /etc/glance/glance-api.conf database retry_interval 10
+crudini --set /etc/glance/glance-api.conf database idle_timeout 3600
+crudini --set /etc/glance/glance-api.conf database min_pool_size 1
+crudini --set /etc/glance/glance-api.conf database max_pool_size 10
+crudini --set /etc/glance/glance-api.conf database max_retries 100
+crudini --set /etc/glance/glance-api.conf database pool_timeout 10
+
+crudini --set /etc/glance/glance-registry.conf database retry_interval 10
+crudini --set /etc/glance/glance-registry.conf database idle_timeout 3600
+crudini --set /etc/glance/glance-registry.conf database min_pool_size 1
+crudini --set /etc/glance/glance-registry.conf database max_pool_size 10
+crudini --set /etc/glance/glance-registry.conf database max_retries 100
+crudini --set /etc/glance/glance-registry.conf database pool_timeout 10  
  
 case $brokerflavor in
 "qpid")

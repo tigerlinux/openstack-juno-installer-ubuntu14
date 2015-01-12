@@ -201,8 +201,12 @@ case $dbflavor in
 	;;
 esac
  
- 
+crudini --set /etc/cinder/cinder.conf database retry_interval 10
 crudini --set /etc/cinder/cinder.conf database idle_timeout 3600
+crudini --set /etc/cinder/cinder.conf database min_pool_size 1
+crudini --set /etc/cinder/cinder.conf database max_pool_size 10
+crudini --set /etc/cinder/cinder.conf database max_retries 100
+crudini --set /etc/cinder/cinder.conf database pool_timeout 10 
  
 crudini --set /etc/cinder/cinder.conf keystone_authtoken auth_host $keystonehost
 crudini --set /etc/cinder/cinder.conf keystone_authtoken admin_tenant_name $keystoneservicestenant

@@ -1,3 +1,9 @@
+1.0.3.ub1404lts - 11-Enero-2015
+- Se incluyen settings para acceso a BD en los módulos
+  de keystone, glance, cinder, neutron, nova y heat.
+- Se modifica la verificación de instalación de ceilometer
+  para adaptarlo a nodos de compute.
+
 1.0.2.ub1404lts - 09-Diciembre-2014
 - Se corrige un BUG en la configuración del parámetro
   "cpu_mode" en el módulo de instalación de Nova.

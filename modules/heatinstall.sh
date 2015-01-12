@@ -224,6 +224,13 @@ case $dbflavor in
 	crudini --set /etc/heat/heat.conf database connection postgresql://$heatdbuser:$heatdbpass@$dbbackendhost:$psqldbport/$heatdbname
 	;;
 esac
+
+crudini --set /etc/heat/heat.conf database retry_interval 10
+crudini --set /etc/heat/heat.conf database idle_timeout 3600
+crudini --set /etc/heat/heat.conf database min_pool_size 1
+crudini --set /etc/heat/heat.conf database max_pool_size 10
+crudini --set /etc/heat/heat.conf database max_retries 100
+crudini --set /etc/heat/heat.conf database pool_timeout 10
  
 crudini --set /etc/heat/heat.conf DEFAULT host $heathost
 crudini --set /etc/heat/heat.conf DEFAULT debug false

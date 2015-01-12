@@ -326,7 +326,13 @@ case $dbflavor in
 	crudini --set /etc/nova/nova.conf database connection postgresql://$novadbuser:$novadbpass@$dbbackendhost:$psqldbport/$novadbname
 	;;
 esac
- 
+
+crudini --set /etc/nova/nova.conf database retry_interval 10
+crudini --set /etc/nova/nova.conf database idle_timeout 3600
+crudini --set /etc/nova/nova.conf database min_pool_size 1
+crudini --set /etc/nova/nova.conf database max_pool_size 10
+crudini --set /etc/nova/nova.conf database max_retries 100
+crudini --set /etc/nova/nova.conf database pool_timeout 10  
 
 #
 # Sigue configuración principal
