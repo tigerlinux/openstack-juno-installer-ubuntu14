@@ -71,7 +71,7 @@ echo ""
 echo "Instalando software para monitoreo"
 echo ""
 
-aptitude -y install virt-top snmpd snmp-mibs-downloader snmp sysstat
+aptitude -y install virt-top snmpd snmp-mibs-downloader snmp sysstat bc
 
 cp -v ./libs/snmp/scripts/* /usr/local/bin/
 chmod a+x /usr/local/bin/*.sh

@@ -29,9 +29,15 @@ apt-get -y install python-software-properties
 add-apt-repository -y cloud-archive:juno
 apt-get -y update && apt-get -y dist-upgrade
 
-Luego reinicie el servidor en caso de tener un nuevo Kernel
+También lo puede agregar con los siguientes comandos:
 
-NOTA: Como un "failsafe", nuestro instalador ya ejecuta dichos pasos, a excepción del reinicio del servidor.
+apt-get -y install python-software-properties
+apt-get -y install ubuntu-cloud-keyring
+echo "deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/juno main" > /etc/apt/sources.list.d/cloudarchive-juno.list
+apt-get -y update && apt-get -y dist-upgrade
+
+
+En cualquiera de los dos casos, asegurese de reiniciar el servidor (la inclusión del repositorio podría traer un nuevo kernel).
 
 
 2.- System Control (/etc/sysctl.conf).

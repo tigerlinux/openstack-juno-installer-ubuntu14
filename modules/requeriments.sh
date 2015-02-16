@@ -31,15 +31,16 @@ rm -rf /tmp/cd_gen_*
 
 apt-get -y install aptitude
 
-echo ""
-echo "Activando repositorios de JUNO para Ubuntu Server 14.04lts"
-echo ""
+# NOTA: Esto queda eliminado del instalador. Lea las notas y agregue manualmente el repo
+# echo ""
+# echo "Activando repositorios de JUNO para Ubuntu Server 14.04lts"
+# echo ""
 
-apt-get -y install python-software-properties
+# apt-get -y install python-software-properties
 # echo "deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/juno main" >  /etc/apt/sources.list.d/ubuntu-cloud-archive-juno-trusty.list
 # apt-get -y install ubuntu-cloud-keyring
-add-apt-repository -y cloud-archive:juno
-apt-get -y update && apt-get -y dist-upgrade
+# add-apt-repository -y cloud-archive:juno
+# apt-get -y update && apt-get -y dist-upgrade
 
 osreposinstalled=`aptitude search python-openstackclient|grep python-openstackclient|head -n1|wc -l`
 amiroot=` whoami|grep root|wc -l`
@@ -185,6 +186,25 @@ else
 	iptables -A INPUT -p tcp -m multiport --dports 22 -j ACCEPT
 	/etc/init.d/iptables-persistent save
 	/etc/init.d/libvirt-bin start
+
+	sed -i.ori 's/#listen_tls = 0/listen_tls = 0/g' /etc/libvirt/libvirtd.conf
+	sed -i 's/#listen_tcp = 1/listen_tcp = 1/g' /etc/libvirt/libvirtd.conf
+	sed -i 's/#auth_tcp = "sasl"/auth_tcp = "none"/g' /etc/libvirt/libvirtd.conf
+	sed -i.ori 's/libvirtd_opts="-d"/libvirtd_opts="-d -l"/g' /etc/default/libvirt-bin
+
+	/etc/init.d/libvirt-bin restart
+
+	iptables -A INPUT -p tcp -m multiport --dports 16509 -j ACCEPT
+	/etc/init.d/iptables-persistent save
+
+	#
+	# Para corrección de BUG en creación de SnapShoots para VM's en ejecución:
+	# Febreo 16, 2015
+	#
+	apt-get -y install apparmor-utils
+	aa-disable /etc/apparmor.d/usr.sbin.libvirtd
+	/etc/init.d/libvirt-bin restart
+
 fi
 
 cp ./libs/ksm.sh /etc/init.d/ksm
@@ -206,5 +226,4 @@ else
 	echo "Falló la instalación de libvirt - abortando el resto de la instalación"
 	exit 0
 fi
-
 

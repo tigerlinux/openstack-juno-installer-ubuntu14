@@ -35,7 +35,6 @@ proc postgres
 extend .1.20 node-cpu-monitor /bin/cat /var/tmp/node-cpu.txt
 extend .1.21 node-ram-monitor /bin/cat /var/tmp/node-memory.txt
 extend .1.22 vm-number-by-states /bin/cat /var/tmp/vm-number-by-states.txt
-extend .1.23 vm-cpu-ram-usage-percent /bin/cat /var/tmp/vm-cpu-ram.txt
 extend .1.24 vm-space-glance-and-nova /bin/cat /var/tmp/vm-disk.txt
 
 #
@@ -61,11 +60,6 @@ extend .1.24 vm-space-glance-and-nova /bin/cat /var/tmp/vm-disk.txt
 #	- Tercera variable: VM's en estado "paused"
 #	- Cuarta variable: VM's en otros estados desconocidos
 #	- Quinta variable: Total de VM's configuradas en el Nodo
-#
-# Variables arbol .1.23
-#	- Primera variable: % de uso CPU de todas las VM's
-#	- Segunda variable: % de uso de RAM Física de todas las VM's
-#	- Tercera variable: Total (en bytes) de memoria asignada a las VM's
 #
 # Variables arbol .1.24
 #	- Primera variable: Uso de disco (en bytes) de las instancias (nova)

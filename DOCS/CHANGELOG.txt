@@ -1,3 +1,17 @@
+1.0.5.ub1404lts - 16-Febrero-2015
+- Se eliminan variables SNMP/ZABBIX para conteo de CPU y
+  RAM usada por QEMU. Las variables han demostrado ser
+  inefectivas. Cuando se encuentre otro método viable y
+  rápido para obtener estas métricas, se incluirán de nuevo
+  las variables.
+- Se hacen mejoras en la secuencia de configuración de
+  libvirt.
+- Se aplica FIX para bug de creación de Snapshots en VM's
+  activas.
+- Se elimina la auto-inclusión del repo para JUNO y se
+  hacen cambios menores en las notas con opciones para
+  agregar los repositorios manualmente.
+
 1.0.4.ub1404lts - 19-Enero-2015
 - Se corrige un bug en los parámetros de VNC y SPICE en el
   módulo de instalación de nova.

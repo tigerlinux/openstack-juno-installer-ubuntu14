@@ -14,8 +14,8 @@
 # Primera versión para Juno (ubuntu): Octubre 29 del 2014
 #
 # Script principal
-# Versión 1.0.4.ub1404lts "Shadow Cat"
-# 19 de Enero del 2015
+# Versión 1.0.5.ub1404lts "Shadow Cat"
+# 16 de Febrero del 2015
 #
 
 PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
@@ -46,7 +46,7 @@ case $1 in
 	echo "INSTALADOR DE OPENSTACK JUNO PARA UBUNTU SERVER 14.04 LTS"
 	echo "Realizado por Reynaldo R. Martinez P."
 	echo "E-Mail: TigerLinux@Gmail.com"
-	echo "Versión 1.0.4.ub1404lts \"Shadow Cat\" - Enero 19, 2015"
+	echo "Versión 1.0.5.ub1404lts \"Shadow Cat\" - Febrero 16, 2015"
 	echo ""
 	echo "Se verificaran los prerequisitos"
 	echo "Si alguno de los prerequisitos falla, se informará y se detendrá el proceso"
