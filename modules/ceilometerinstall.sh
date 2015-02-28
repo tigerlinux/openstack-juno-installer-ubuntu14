@@ -258,6 +258,12 @@ crudini --set /etc/ceilometer/ceilometer.conf DEFAULT control_exchange ceilomete
 crudini --set /etc/ceilometer/ceilometer.conf DEFAULT http_control_exchanges nova
 sed -r -i 's/http_control_exchanges\ =\ nova/http_control_exchanges=nova\nhttp_control_exchanges=glance\nhttp_control_exchanges=cinder\nhttp_control_exchanges=neutron\n/' /etc/ceilometer/ceilometer.conf
 crudini --set /etc/ceilometer/ceilometer.conf publisher_rpc metering_topic metering
+
+crudini --set /etc/ceilometer/ceilometer.conf DEFAULT instance_name_template $instance_name_template
+crudini --set /etc/ceilometer/ceilometer.conf service_types neutron network
+crudini --set /etc/ceilometer/ceilometer.conf service_types nova compute
+crudini --set /etc/ceilometer/ceilometer.conf service_types kwapi energy
+crudini --set /etc/ceilometer/ceilometer.conf service_types swift object-store
  
 usermod -G nova ceilometer
 usermod -G qemu ceilometer

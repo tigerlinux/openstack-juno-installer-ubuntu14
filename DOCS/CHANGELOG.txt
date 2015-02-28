@@ -1,3 +1,6 @@
+1.0.6.ub1404lts - 28-Febrero-2015
+- Mejoras en módulo de instalación de ceilometer.
+
 1.0.5.ub1404lts - 16-Febrero-2015
 - Se eliminan variables SNMP/ZABBIX para conteo de CPU y
   RAM usada por QEMU. Las variables han demostrado ser

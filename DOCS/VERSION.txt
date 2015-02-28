@@ -1,5 +1,5 @@
 Version del instalador:
 
-1.0.5.ub1404lts "Shadow Cat"
+1.0.6.ub1404lts "Shadow Cat"
 
 SOLO PARA OPENSTACK JUNO !!!
